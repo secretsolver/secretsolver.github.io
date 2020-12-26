@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+<title>Puzzles!</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
+<link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="wrap">
+<div id="header">
+  <h1>Secret Solver 2020</h1>
+</div>
+<div id="topnav">
+  <ul id="topnavlist">
+  </ul>
+</div>
+<!--div id="gutter"></div-->
+
+
+<div id="main">
+<div id="col2">
+  <h2>A Feat in Engineering</h2>
+
+The genius of Lego is that it can build on top of itself. Maybe you can do the same here by building on top of all of the puzzles you solved to make something that will allow you to reach new heights.
+
+<div class="center logodiv">
+	<img class="logo" src="img/likes.png" usemap="#image-map">
+</div>
+
+<map name="image-map">
+    <area target="" alt="" title="" href="arc.html" coords="310,461,156,30" shape="rect">
+    <area target="" alt="" title="" href="doc.html" coords="321,97,516,362" shape="rect">
+    <area target="" alt="" title="" href="cr.html" coords="546,159,810,310" shape="rect">
+    <area target="" alt="" title="" href="quiz.html" coords="847,198,1064,277" shape="rect">
+    <area target="" alt="" title="" href="blank.html" coords="1078,164,1211,303" shape="rect">
+    <area target="" alt="" title="" href="wait.html" coords="1220,165,1339,346" shape="rect">
+</map>
+
+<div class="center logodiv">
+	<img class="quizim" src="img/lg.png">
+</div>
+
+<div class="center">
+You might need to rotate and/or flip pieces.
+</div>
+
+</div>
+</div>
+</div>
+<div id="footer"> </div>
+</body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script>;(function(a){a.fn.rwdImageMaps=function(){var c=this;var b=function(){c.each(function(){if(typeof(a(this).attr("usemap"))=="undefined"){return}var e=this,d=a(e);a("<img />").on('load',function(){var g="width",m="height",n=d.attr(g),j=d.attr(m);if(!n||!j){var o=new Image();o.src=d.attr("src");if(!n){n=o.width}if(!j){j=o.height}}var f=d.width()/100,k=d.height()/100,i=d.attr("usemap").replace("#",""),l="coords";a('map[name="'+i+'"]').find("area").each(function(){var r=a(this);if(!r.data(l)){r.data(l,r.attr(l))}var q=r.data(l).split(","),p=new Array(q.length);for(var h=0;h<p.length;++h){if(h%2===0){p[h]=parseInt(((q[h]/n)*100)*f)}else{p[h]=parseInt(((q[h]/j)*100)*k)}}r.attr(l,p.toString())})}).attr("src",d.attr("src"))})};a(window).resize(b).trigger("resize");return this}})(jQuery);</script>
+<script>
+$(document).ready(function(e) {
+	$('img[usemap]').rwdImageMaps();
+});
+
+</script>
+
+</html>

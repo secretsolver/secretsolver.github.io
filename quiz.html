@@ -1,0 +1,147 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+<title>Puzzles!</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
+<link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="wrap">
+<div id="header">
+  <h1>Secret Solver 2020</h1>
+</div>
+<div id="topnav">
+  <ul id="topnavlist">
+  </ul>
+</div>
+
+
+<div id="main">
+<div id="col2">
+  <h2>Trivia Game</h2>
+
+  <p>Rusty is well-versed on all of space, including planet Earth. </p>
+
+  <p>(Some liberties were taken when making this puzzle, on e.g. cities vs metropolitan areas.)</p>
+
+  <div class="quizrow">
+	  <div class="quizcol">
+		  <div class="center">
+		  	<input class="left-button" type="button" value="<" id="left05" />
+		  	&nbsp;&nbsp;
+		  	<div id="cit05_text" class="gallerylabel">Image 1. (5 pts)</div>
+		  	&nbsp;&nbsp;
+		  	<input class="right-button" type="button" value=">" id="right05" />
+		  	</span>
+		  </div>
+		  	
+		  <div class="center">
+		  	<img id="cit05_image" class="quizim" src="img/c/c51.jpg" />
+		  </div>
+	  </div>
+
+  <div class="quizcol">
+	  <div class="center">
+	  	<input class="left-button" type="button" value="<" id="left04" />
+	  	&nbsp;&nbsp;
+	  	<div id="cit04_text" class="gallerylabel">Image 1. (5 pts)</div>
+	  	&nbsp;&nbsp;
+	  	<input class="right-button" type="button" value=">" id="right04" />
+	  	</span>
+	  </div>
+	  	
+	  <div class="center">
+	  	<img id="cit04_image" class="quizim" src="img/c/c41.jpg" />
+	  </div>
+  </div>
+  </div>
+
+  <div class="quizrow">
+  <div class="quizcol">
+	  <div class="center">
+	  	<input class="left-button" type="button" value="<" id="left03" />
+	  	&nbsp;&nbsp;
+	  	<div id="cit03_text" class="gallerylabel">Image 1. (5 pts)</div>
+	  	&nbsp;&nbsp;
+	  	<input class="right-button" type="button" value=">" id="right03" />
+	  	</span>
+	  </div>
+	  	
+	  <div class="center">
+	  	<img id="cit03_image" class="quizim" src="img/c/c31.jpg" />
+	  </div>
+  </div>
+
+  <div class="quizcol">
+	  <div class="center">
+	  	<input class="left-button" type="button" value="<" id="left02" />
+	  	&nbsp;&nbsp;
+	  	<div id="cit02_text" class="gallerylabel">Image 1. (5 pts)</div>
+	  	&nbsp;&nbsp;
+	  	<input class="right-button" type="button" value=">" id="right02" />
+	  	</span>
+	  </div>
+	  	
+	  <div class="center">
+	  	<img id="cit02_image" class="quizim" src="img/c/c21.jpg" />
+	  </div>
+  </div>
+</div>
+
+<div class="quizrow">
+  <div class="quizcol">
+	  <div class="center">
+	  	<input class="left-button" type="button" value="<" id="left01" />
+	  	&nbsp;&nbsp;
+	  	<div id="cit01_text" class="gallerylabel">Image 1. (5 pts)</div>
+	  	&nbsp;&nbsp;
+	  	<input class="right-button" type="button" value=">" id="right01" />
+	  	</span>
+	  </div>
+	  	
+	  <div class="center">
+	  	<img id="cit01_image" class="quizim" src="img/c/c11.jpg" />
+	  </div>
+  </div>
+
+<div class="quizrow">
+<pre>1) _ _ 13(+20) 12(+15) _
+2) _ _ 9(+3) 4 _ 10(+11)
+3) 1(+12) 11(+1) _  _ _ 6(+17) _ _
+4) _ 3(+17) _ 7(+9) _  _ _ 2(+14) 8(+17)
+5) _ _ _ _ _ _ 14(+12) 5(+4) _</pre>
+</div>
+
+</div>
+</div>
+</div>
+<div id="footer"> </div>
+</body>
+
+<script>
+
+function rotate_image() {
+	var who = this.id;
+	var idx = who.substr(who.length - 2, 2);
+
+	var img_el = document.getElementById("cit" + idx + "_image");
+
+	var cur_img = parseInt( img_el.src[img_el.src.length - 5] );
+	if (who.startsWith("right")) cur_img = cur_img + 1;
+	else cur_img = cur_img - 1;
+
+	if (cur_img >= 1 && cur_img <= 5) {
+		img_el.src = img_el.src.substr(0, img_el.src.length - 5) + cur_img + img_el.src.substr(img_el.src.length - 4);
+
+		document.getElementById("cit" + idx + "_text").innerHTML = "Image " + cur_img + ". (" + (6 - cur_img) + " points)";
+	}
+}
+
+for (var i = 1; i <= 5; i++) {
+	document.getElementById("left0" + i).onclick = rotate_image;
+	document.getElementById("right0" + i).onclick = rotate_image;
+}
+</script>
+</html>
